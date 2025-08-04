@@ -1,0 +1,6 @@
+{
+  "kind": "REPLACE",
+  "pattern": "(\\d{4})(\\d{2})(\\d{2})(.*)",
+  "replacement": "$1-$2-$3",
+  "value": {{PLACEHOLDER}}
+}

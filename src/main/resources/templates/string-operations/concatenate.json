@@ -1,0 +1,5 @@
+{
+  "kind": "CONCATENATE",
+  "left": {{PLACEHOLDER}},
+  "right": { }
+}

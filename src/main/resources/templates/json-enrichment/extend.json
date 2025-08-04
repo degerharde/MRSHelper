@@ -1,0 +1,9 @@
+{
+  "kind": "EXTEND",
+  "path": "path.from.value.to.object",
+  "objectAlias": "object",
+  "onAbsence": "error",
+  "onConflict": "override",
+  "value": {{PLACEHOLDER}},
+  "extension": { }
+}

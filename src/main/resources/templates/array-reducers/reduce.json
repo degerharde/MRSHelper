@@ -1,0 +1,8 @@
+{
+  "kind": "REDUCE",
+  "itemAlias": "item",
+  "accumulatorAlias": "accumulator",
+  "array": {{PLACEHOLDER}},
+  "accumulator": { },
+  "reducer": { }
+}

@@ -1,0 +1,6 @@
+{
+  "kind": "CONDITION",
+  "if": { },
+  "then": {{PLACEHOLDER}},
+  "else": { }
+}

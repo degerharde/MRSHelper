@@ -1,0 +1,337 @@
+{
+  "structure": {
+    "label": "Structure",
+    "templates": [
+      {
+        "file": "structure/get.json",
+        "name": "GET",
+        "description": "Gets the value from the context by the path defined in the path parameter"
+      },
+      {
+        "file": "structure/get_property.json",
+        "name": "GET_PROPERTY",
+        "description": "Gets the value of the property of this object which name is provided by the property rule"
+      },
+      {
+        "file": "structure/get_item.json",
+        "name": "GET_ITEM",
+        "description": "Gets the value of the item of this object which index is provided by the index rule"
+      },
+      {
+        "file": "structure/constant.json",
+        "name": "CONSTANT",
+        "description": "This rule does nothing, just returns specified value every time"
+      },
+      {
+        "file": "structure/object.json",
+        "name": "OBJECT",
+        "description": "Creates an object with the property names defined in the properties parameter and values returned by corresponding rules"
+      },
+      {
+        "file": "structure/array.json",
+        "name": "ARRAY",
+        "description": "Creates an array with the items returned by rules from the items parameter"
+      }
+    ]
+  },
+  "array-transformers": {
+    "label": "Array transformers",
+    "templates": [
+      {
+        "file": "array-transformers/map.json",
+        "name": "MAP",
+        "description": "Iterates over array and runs the rule from transformation parameter for each array item"
+      },
+      {
+        "file": "array-transformers/filter.json",
+        "name": "FILTER",
+        "description": "Iterates over this array and runs the rule from predicate parameter for each array item"
+      },
+      {
+        "file": "array-transformers/flatten.json",
+        "name": "FLATTEN",
+        "description": "Iterates over this array and if needed nested arrays in depth specified in the depth parameter"
+      },
+      {
+        "file": "array-transformers/distinct.json",
+        "name": "DISTINCT",
+        "description": "Removes duplicates from this array and returns the array without duplicates"
+      },
+      {
+        "file": "array-transformers/slice.json",
+        "name": "SLICE",
+        "description": "Gets the value returned by the rule specified in the array parameter and returns subarray of this array"
+      },
+      {
+        "file": "array-transformers/group.json",
+        "name": "GROUP",
+        "description": "Groups all the items with the same value returned by key rule"
+      },
+      {
+        "file": "array-transformers/group_as_map.json",
+        "name": "GROUP_AS_MAP",
+        "description": "Groups all the items with the same value returned by key rule. The keys have to be strings"
+      }
+    ]
+  },
+  "array-reducers": {
+    "label": "Array reducers",
+    "templates": [
+      {
+        "file": "array-reducers/sum_all.json",
+        "name": "SUM_ALL",
+        "description": "Sums the values of an array that rule from the array parameter returns"
+      },
+      {
+        "file": "array-reducers/sum_all.json",
+        "name": "MULTIPLY_ALL",
+        "description": "Multiplies the values of an array that rule from the array parameter returns"
+      },
+      {
+        "file": "array-reducers/min_of.json",
+        "name": "MIN_OF",
+        "description": "Calculates the minimum number from an array that rule from the array parameter returns"
+      },
+      {
+        "file": "array-reducers/max_of.json",
+        "name": "MAX_OF",
+        "description": "Calculates the maximum number from an array that rule from the array parameter returns"
+      },
+      {
+        "file": "array-reducers/any_of.json",
+        "name": "ANY_OF",
+        "description": "Checks if at least one item from an array that rule from the array parameter returns is true. Returns boolean check result"
+      },
+      {
+        "file": "array-reducers/all_of.json",
+        "name": "ALL_OF",
+        "description": "Checks if all the items from an array that rule from the array parameter returns is true. Returns boolean check result"
+      },
+      {
+        "file": "array-reducers/count.json",
+        "name": "COUNT",
+        "description": "Returns an integer value which represents how many items are in array returned by the rule from the array parameter"
+      },
+      {
+        "file": "array-reducers/reduce.json",
+        "name": "REDUCE",
+        "description": "Iterates over array and apply accumulator and reducer"
+      }
+    ]
+  },
+  "math": {
+    "label": "Mathematical operations",
+    "templates": [
+      {
+        "file": "math/add.json",
+        "name": "ADD",
+        "description": "Sums up two numbers"
+      },
+      {
+        "file": "math/subtract.json",
+        "name": "SUBTRACT",
+        "description": "Subtracts one number from another"
+      },
+      {
+        "file": "math/multiply.json",
+        "name": "MULTIPLY",
+        "description": "Multiply two numbers"
+      },
+      {
+        "file": "math/divide.json",
+        "name": "DIVIDE",
+        "description": "Divide two numbers"
+      },
+      {
+        "file": "math/mod.json",
+        "name": "MOD",
+        "description": "Calculates a reminder of dividing one integer by another"
+      },
+      {
+        "file": "math/round.json",
+        "name": "ROUND",
+        "description": "Rounds a number to an integer. \"UP\", \"DOWN\", \"NEAREST\""
+      }
+    ]
+  },
+  "logical": {
+    "label": "Logical operations",
+    "templates": [
+      {
+        "file": "logical/and.json",
+        "name": "AND",
+        "description": "Returns true in case if two values are true"
+      },
+      {
+        "file": "logical/or.json",
+        "name": "OR",
+        "description": "Returns true in case if at least one of two values is true"
+      },
+      {
+        "file": "logical/not.json",
+        "name": "NOT",
+        "description": "Returns false in case if value is true and true in case if value is false"
+      }
+    ]
+  },
+  "conditions": {
+    "label": "Conditions",
+    "templates": [
+      {
+        "file": "conditions/condition.json",
+        "name": "CONDITION",
+        "description": "Runs the rule from the if parameter and executes corresponding rule"
+      },
+      {
+        "file": "conditions/first_existent.json",
+        "name": "FIRST_EXISTENT",
+        "description": "This rule runs all the rules from the values parameter and returns the first value which is not undefined"
+      },
+      {
+        "file": "conditions/exist.json",
+        "name": "EXIST",
+        "description": "Checks if the value returned by the rule in the value parameter exists or not (undefined)"
+      }
+    ]
+  },
+  "comparisons": {
+    "label": "Comparisons",
+    "templates": [
+      {
+        "file": "comparisons/equal.json",
+        "name": "EQUAL",
+        "description": "Compares two values and returns true if they are equal and false otherwise"
+      },
+      {
+        "file": "comparisons/not_equal.json",
+        "name": "NOT_EQUAL",
+        "description": "Compares two values and returns true if they are not equal and false otherwise"
+      },
+      {
+        "file": "comparisons/less.json",
+        "name": "LESS",
+        "description": "Compares two numbers and returns true if left is less than right and false otherwise"
+      },
+      {
+        "file": "comparisons/less_or_equal.json",
+        "name": "LESS_OR_EQUAL",
+        "description": "Compares two numbers and returns true if left is less or equal than right and false otherwise"
+      },
+      {
+        "file": "comparisons/greater.json",
+        "name": "GREATER",
+        "description": "Compares two numbers and returns true if left is greater than right and false otherwise"
+      },
+      {
+        "file": "comparisons/greater_or_equal.json",
+        "name": "GREATER_OR_EQUAL",
+        "description": "Compares two numbers and returns true if left is greater or equal than right and false otherwise"
+      }
+    ]
+  },
+  "type-operations": {
+    "label": "Type operations",
+    "templates": [
+      {
+        "file": "type-operations/cast.json",
+        "name": "CAST",
+        "description": "This rule converts the value returned by the rule from the value parameter to the type specified in the type parameter. \"boolean\", \"integer\", \"number\", \"string\""
+      },
+      {
+        "file": "type-operations/to_array.json",
+        "name": "TO_ARRAY",
+        "description": "Wraps the value returned by the rule from the value parameter to array if it is not of array type"
+      },
+      {
+        "file": "type-operations/to_entries.json",
+        "name": "TO_ENTRIES",
+        "description": "Converts the object returned by the rule from the object parameter to an array of its entries"
+      },
+      {
+        "file": "type-operations/is_type.json",
+        "name": "IS_TYPE",
+        "description": "Checks if value returned by the rule in the value parameter is of the type specified in the type parameter. \"boolean\", \"integer\", \"number\", \"string\", \"array\", \"object\""
+      }
+    ]
+  },
+  "string-operations": {
+    "label": "String operations",
+    "templates": [
+      {
+        "file": "string-operations/translate.json",
+        "name": "TRANSLATE",
+        "description": "Converts the value returned by rule from the value parameter using the translation with the code specified in the code parameter"
+      },
+      {
+        "file": "string-operations/concatenate.json",
+        "name": "CONCATENATE",
+        "description": "Concatenates two strings into one"
+      },
+      {
+        "file": "string-operations/replace.json",
+        "name": "REPLACE",
+        "description": "Replaces the string returned by the rule from the value parameter with another based on regular expression"
+      },
+      {
+        "file": "string-operations/match.json",
+        "name": "MATCH",
+        "description": "Returns true if the string returned by the rule from the value parameter matches regular expression"
+      },
+      {
+        "file": "string-operations/uppercase.json",
+        "name": "UPPERCASE",
+        "description": "Returns this string converted to uppercase"
+      },
+      {
+        "file": "string-operations/lowercase.json",
+        "name": "LOWERCASE",
+        "description": "Returns this string converted to lowercase"
+      }
+    ]
+  },
+  "context-extensions": {
+    "label": "Context extensions",
+    "templates": [
+      {
+        "file": "context-extensions/define.json",
+        "name": "DEFINE",
+        "description": "This rule runs all the rules from the values parameter and creates this values in the context of the rule from the rule parameter with corresponding names"
+      }
+    ]
+  },
+  "json-enrichment": {
+    "label": "JSON enrichment",
+    "templates": [
+      {
+        "file": "json-enrichment/extend.json",
+        "name": "EXTEND",
+        "description": "Returns the value object with the new properties"
+      }
+    ]
+  },
+  "date-manipulations": {
+    "label": "Date manipulations",
+    "templates": [
+      {
+        "file": "date-manipulations/add_days.json",
+        "name": "ADD_DAYS",
+        "description": "Adds an amount of days specified in days parameter to this date"
+      },
+      {
+        "file": "date-manipulations/years_between.json",
+        "name": "YEARS_BETWEEN",
+        "description": "Calculates the number of years that have passed from one date to another"
+      }
+    ]
+  },
+  "user-input-error": {
+    "label": "User input error",
+    "templates": [
+      {
+        "file": "user-input-error/error.json",
+        "name": "ERROR",
+        "description": "Throws the error of user input if reached"
+      }
+    ]
+  }
+}
